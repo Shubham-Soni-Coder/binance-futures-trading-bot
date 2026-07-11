@@ -1,0 +1,40 @@
+2026-07-11 14:44:48 | INFO | Validating Input | Symbol=BITCUSDT Side=BUYType=MARKET Quantity=0.001 Price=None
+2026-07-11 14:44:48 | INFO | Input validation successful.
+2026-07-11 14:44:54 | INFO | Sending MARKET order | Symbol=BITCUSDT Side=BUY Quantity=0.001
+2026-07-11 14:44:56 | INFO | MARKET order placed successfully | {}
+2026-07-11 14:46:07 | INFO | Validating Input | Symbol=BITCUSDT Side=BUYType=MARKET Quantity=0.001 Price=None
+2026-07-11 14:46:07 | INFO | Input validation successful.
+2026-07-11 14:46:09 | INFO | Sending MARKET order | Symbol=BITCUSDT Side=BUY Quantity=0.001
+2026-07-11 14:46:11 | INFO | MARKET order placed successfully | {}
+2026-07-11 14:58:24 | INFO | Validating Input | Symbol=BTCUSDT Side=BUYType=MARKET Quantity=0.001 Price=None
+2026-07-11 14:58:24 | INFO | Input validation successful.
+2026-07-11 14:58:25 | INFO | Sending MARKET order | Symbol=BTCUSDT Side=BUY Quantity=0.001
+2026-07-11 14:58:26 | ERROR | Binance API Error: APIError(code=-2019): Margin is insufficient.
+2026-07-11 14:58:26 | ERROR | APIError(code=-2019): Margin is insufficient.
+Traceback (most recent call last):
+  File "E:\trading_bot\cli.py", line 59, in main
+    response = service.place_market_order(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\trading_bot\bot\orders.py", line 18, in place_market_order
+    response = self.client.futures_create_order(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\trading_bot\venv\Lib\site-packages\binance\client.py", line 7948, in futures_create_order
+    return self._request_futures_api("post", "order", True, data=params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\trading_bot\venv\Lib\site-packages\binance\client.py", line 148, in _request_futures_api
+    return self._request(method, uri, signed, force_params, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\trading_bot\venv\Lib\site-packages\binance\client.py", line 111, in _request
+    return self._handle_response(self.response)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\trading_bot\venv\Lib\site-packages\binance\client.py", line 120, in _handle_response
+    raise BinanceAPIException(response, response.status_code, response.text)
+binance.exceptions.BinanceAPIException: APIError(code=-2019): Margin is insufficient.
+2026-07-11 15:05:40 | INFO | Validating Input | Symbol=BTCUSDT Side=BUYType=MARKET Quantity=0.001 Price=None
+2026-07-11 15:05:40 | INFO | Input validation successful.
+2026-07-11 15:05:41 | INFO | Sending MARKET order | Symbol=BTCUSDT Side=BUY Quantity=0.001
+2026-07-11 15:05:42 | INFO | MARKET order placed successfully | {'orderId': 20877602238, 'symbol': 'BTCUSDT', 'status': 'NEW', 'clientOrderId': 'x-Cb7ytekJ168801a1f7c12e26e1b65c', 'price': '0.00', 'origQty': '0.0010', 'executedQty': '0.0000', 'cumQty': '0.0000', 'timeInForce': 'GTC', 'type': 'MARKET', 'reduceOnly': False, 'closePosition': False, 'side': 'BUY', 'positionSide': 'BOTH', 'stopPrice': '0.00', 'workingType': 'CONTRACT_PRICE', 'priceProtect': False, 'origType': 'MARKET', 'priceMatch': 'NONE', 'selfTradePreventionMode': 'EXPIRE_MAKER', 'goodTillDate': 0, 'updateTime': 1783762544394}
+2026-07-11 15:07:24 | INFO | Validating Input | Symbol=BTCUSDT Side=SELLType=LIMIT Quantity=0.001 Price=100000.0
+2026-07-11 15:07:24 | INFO | Input validation successful.
+2026-07-11 15:07:27 | INFO | Sending LIMIT order | Symbol=BTCUSDT Side=SELL Quantity=0.001 Price=100000.0
+2026-07-11 15:07:29 | INFO | LIMIT order placed successfully | {'orderId': 20877926188, 'symbol': 'BTCUSDT', 'status': 'NEW', 'clientOrderId': 'x-Cb7ytekJ2d1a152f304bff5bc00993', 'price': '100000.00', 'origQty': '0.0010', 'executedQty': '0.0000', 'cumQty': '0.0000', 'timeInForce': 'GTC', 'type': 'LIMIT', 'reduceOnly': False, 'closePosition': False, 'side': 'SELL', 'positionSide': 'BOTH', 'stopPrice': '0.00', 'workingType': 'CONTRACT_PRICE', 'priceProtect': False, 'origType': 'LIMIT', 'priceMatch': 'NONE', 'selfTradePreventionMode': 'EXPIRE_MAKER', 'goodTillDate': 0, 'updateTime': 1783762650545}
